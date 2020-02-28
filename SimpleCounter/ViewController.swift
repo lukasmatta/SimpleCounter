@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // MARK: Properties
+    @IBOutlet weak var clicksLabel: UILabel!
+    private var clicks: Int = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    // MARK: Actions
+    @IBAction func increaseClicks(_ sender: UIButton) {
+        clicks += 1;
+        clicksLabel.text = "Clicked \(clicks) times";
+    }
+    
+    @IBAction func resetClicks(_ sender: UIButton) {
+        clicks = 0;
+        clicksLabel.text = "Clicked \(clicks) times";
+    }
+    
 
 }
 
